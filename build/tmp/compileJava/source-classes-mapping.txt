@@ -1,0 +1,23 @@
+me/jko/petclinic/owner/dto/OwnerCreateDto.java
+ me.jko.petclinic.owner.dto.OwnerCreateDto
+me/jko/petclinic/visit/repository/VisitRepository.java
+ me.jko.petclinic.visit.repository.VisitRepository
+me/jko/petclinic/config/SwaggerConfig.java
+ me.jko.petclinic.config.SwaggerConfig
+me/jko/petclinic/owner/repository/OwnerRepository.java
+ me.jko.petclinic.owner.repository.OwnerRepository
+me/jko/petclinic/PetClinicApplication.java
+ me.jko.petclinic.PetClinicApplication
+me/jko/petclinic/visit/entity/Visit.java
+ me.jko.petclinic.visit.entity.Visit
+me/jko/petclinic/owner/dto/OwnerUpdateDto.java
+ me.jko.petclinic.owner.dto.OwnerUpdateDto
+me/jko/petclinic/owner/controller/OwnerController.java
+ me.jko.petclinic.owner.controller.OwnerController
+me/jko/petclinic/pet/entity/Pet.java
+ me.jko.petclinic.pet.entity.Pet
+me/jko/petclinic/owner/service/OwnerService.java
+ me.jko.petclinic.owner.service.OwnerService
+me/jko/petclinic/owner/entity/Owner.java
+ me.jko.petclinic.owner.entity.Owner
+ me.jko.petclinic.owner.entity.Owner$OwnerBuilder
