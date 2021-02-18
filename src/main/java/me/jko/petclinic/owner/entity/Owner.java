@@ -11,6 +11,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import me.jko.petclinic.owner.dto.OwnerCreateDto;
+import me.jko.petclinic.owner.dto.OwnerUpdateDto;
 import me.jko.petclinic.pet.entity.Pet;
 
 import java.util.Set;
@@ -39,4 +41,23 @@ public class Owner {
 
   @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
   private Set<Pet> pets;
+
+  public static Owner of(OwnerCreateDto ownerCreateDto) {
+    return Owner.builder()
+        .firstName(ownerCreateDto.getFirstName())
+        .lastName(ownerCreateDto.getLastName())
+        .address(ownerCreateDto.getAddress())
+        .city(ownerCreateDto.getCity())
+        .telephone(ownerCreateDto.getTelephone())
+        .pets(null)
+        .build();
+  }
+
+  public void updateBy(OwnerUpdateDto ownerUpdateDto) {
+    this.firstName = ownerUpdateDto.getFirstName();
+    this.lastName = ownerUpdateDto.getLastName();
+    this.address = ownerUpdateDto.getAddress();
+    this.city = ownerUpdateDto.getCity();
+    this.telephone = ownerUpdateDto.getTelephone();
+  }
 }
