@@ -1,6 +1,6 @@
 package me.jko.petclinic.owner.entity;
 
-import javax.persistence.CascadeType;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,6 +15,7 @@ import me.jko.petclinic.owner.dto.OwnerCreateDto;
 import me.jko.petclinic.owner.dto.OwnerUpdateDto;
 import me.jko.petclinic.pet.entity.Pet;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -39,7 +40,8 @@ public class Owner {
 
   private String telephone;
 
-  @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
+  @OneToMany(mappedBy = "owner")
+  @JsonManagedReference
   private Set<Pet> pets;
 
   public static Owner of(OwnerCreateDto ownerCreateDto) {
@@ -59,5 +61,13 @@ public class Owner {
     this.address = ownerUpdateDto.getAddress();
     this.city = ownerUpdateDto.getCity();
     this.telephone = ownerUpdateDto.getTelephone();
+  }
+
+  public void add(Pet pet) {
+    if (pets == null) {
+      this.pets = new HashSet<>();
+    }
+
+    pets.add(pet);
   }
 }
