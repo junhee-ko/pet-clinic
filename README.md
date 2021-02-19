@@ -1,6 +1,6 @@
 ## Intro
 
-Spring MVC practice
+Spring Pet Clinic Application
 
 ## Ref
 
