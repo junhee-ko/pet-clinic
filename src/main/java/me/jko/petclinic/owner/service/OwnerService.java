@@ -27,6 +27,10 @@ public class OwnerService {
     return ownerRepository.findAll();
   }
 
+  public Owner getOwnerBy(Long id) {
+    return ownerRepository.findById(id).orElseThrow(EntityNotFoundException::new);
+  }
+
   @Transactional
   public Owner updateOwnerBy(Long ownerId, OwnerUpdateDto ownerUpdateDto) {
     Owner owner = ownerRepository.findById(ownerId).orElseThrow(EntityNotFoundException::new);
