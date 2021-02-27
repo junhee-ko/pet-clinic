@@ -1,6 +1,7 @@
 package me.jko.petclinic.owner.entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -40,7 +41,7 @@ public class Owner {
 
   private String telephone;
 
-  @OneToMany(mappedBy = "owner")
+  @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
   @JsonManagedReference
   private Set<Pet> pets;
 
