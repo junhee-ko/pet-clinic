@@ -15,6 +15,7 @@ import lombok.Setter;
 import me.jko.petclinic.owner.dto.OwnerCreateDto;
 import me.jko.petclinic.owner.dto.OwnerUpdateDto;
 import me.jko.petclinic.pet.entity.Pet;
+import me.jko.petclinic.visit.dto.VisitCreateDto;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -70,5 +71,15 @@ public class Owner {
     }
 
     pets.add(pet);
+  }
+
+  public boolean isOwnerOfPetBy(VisitCreateDto visitCreateDto) {
+    for (Pet pet : pets) {
+      if (pet.getId().equals(visitCreateDto.getPetId())) {
+        return true;
+      }
+    }
+
+    return false;
   }
 }
