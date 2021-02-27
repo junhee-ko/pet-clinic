@@ -26,6 +26,7 @@
 .idea/**/dbnavigator.xml
 
 # Gradle
+.gradle
 .idea/**/gradle.xml
 .idea/**/libraries
 
@@ -87,6 +88,7 @@ fabric.properties
 modules.xml
 .idea/misc.xml
 *.ipr
+build
 
 # Sonarlint plugin
 .idea/sonarlint
